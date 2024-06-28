@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import logo from './images/logo.jpeg';
-import { animateScroll as scroll, Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +17,9 @@ function App() {
             <img src={logo} alt="Fertility Care Logo" className="h-24" /> {/* Adjust the height as needed */}
           </Link>
           <div className="hidden md:flex space-x-6">
-            <ScrollLink to="home" smooth={true} duration={500} className="text-gray-700 hover:text-teal-600 cursor-pointer">Home</ScrollLink>
-            <ScrollLink to="about" smooth={true} duration={500} className="text-gray-700 hover:text-teal-600 cursor-pointer">About Us</ScrollLink>
-            <ScrollLink to="contact" smooth={true} duration={500} className="text-gray-700 hover:text-teal-600 cursor-pointer">Contact</ScrollLink>
+            <Link to="/" className="text-gray-700 hover:text-teal-600">Home</Link>
+            <Link to="/about" className="text-gray-700 hover:text-teal-600">About Us</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-teal-600">Contact</Link>
           </div>
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700 focus:outline-none">
@@ -32,9 +32,9 @@ function App() {
         {isOpen && (
           <div className="md:hidden">
             <ul className="flex flex-col items-center space-y-4 p-4">
-              <li><ScrollLink to="home" smooth={true} duration={500} className="text-gray-700 hover:text-teal-600 cursor-pointer" onClick={() => setIsOpen(false)}>Home</ScrollLink></li>
-              <li><ScrollLink to="about" smooth={true} duration={500} className="text-gray-700 hover:text-teal-600 cursor-pointer" onClick={() => setIsOpen(false)}>About Us</ScrollLink></li>
-              <li><ScrollLink to="contact" smooth={true} duration={500} className="text-gray-700 hover:text-teal-600 cursor-pointer" onClick={() => setIsOpen(false)}>Contact</ScrollLink></li>
+              <li><Link to="/" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-teal-600">Home</Link></li>
+              <li><Link to="/about" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-teal-600">About Us</Link></li>
+              <li><Link to="/contact" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-teal-600">Contact</Link></li>
             </ul>
           </div>
         )}
