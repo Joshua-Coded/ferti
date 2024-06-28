@@ -1,0 +1,25 @@
+/* Home.css */
+
+/* Smooth scroll effect for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Style for the active link in navigation */
+.active {
+    font-weight: bold;
+    color: #ff4500;
+    /* Adjust color as per your design */
+}
+
+/* Optional: Add transitions for smoother visual effects */
+.section {
+    transition: background-color 0.3s ease;
+}
+
+/* Example: Changing background color on hover or active */
+.section:hover,
+.section.active {
+    background-color: #f0f0f0;
+    /* Adjust as per your design */
+}

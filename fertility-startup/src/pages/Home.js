@@ -4,10 +4,31 @@ import { Carousel } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBaby, faSnowflake, faDna, faClipboardList, faHospital, faSync } from '@fortawesome/free-solid-svg-icons';
 import backgroundImg from "../images/image2.jpeg";
-import testimonialImage1 from "../images/image1.jpeg"; // Import your testimonial image
-import testimonialImage2 from "../images/image2.jpeg"; // Import your testimonial image
+import testimonialImage1 from "../images/image1.jpeg";
+import testimonialImage2 from "../images/image2.jpeg";
 import { Element } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Infographics from '../Infographics';
+
+const infographicData = [
+    {
+        title: "Success Rate",
+        value: "85%",
+        description: "Our fertility treatments have a high success rate."
+    },
+    {
+        title: "Years of Experience",
+        value: "20+",
+        description: "Providing expert care for over 20 years."
+    },
+    {
+        title: "Happy Families",
+        value: "1000+",
+        description: "We have helped over 1000 families grow."
+    }
+    // Add more data as needed
+];
 
 function Home() {
     const icons = {
@@ -18,7 +39,6 @@ function Home() {
         treatment: <FontAwesomeIcon icon={faHospital} />,
         followUp: <FontAwesomeIcon icon={faSync} />,
     };
-
     return (
         <div>
             <div className="bg-cover bg-center h-screen relative" style={{ backgroundImage: `url(${backgroundImg})`, width: '100%' }}>
@@ -107,18 +127,17 @@ function Home() {
                         <Carousel interval={4000}>
                             <Carousel.Item>
                                 <div className="p-6 shadow-md rounded-lg">
-                                    <span className="text-6xl text-center block mb-4">{icons.ivf}</span>
-                                    <img src={testimonialImage1} alt="Testimonial 1" className="mx-auto mb-4 rounded-full" style={{ width: '100px', height: '100px', objectFit: 'cover' }} />
-                                    <blockquote className="text-xl italic mb-4">"Fertitera made our dream of starting a family a reality. Their expertise and support were invaluable."</blockquote>
-                                    <p className="text-gray-700 font-bold">John and Sarah Doe</p>
+
+                                    <img src={testimonialImage1} alt="Testimonial 1" className="rounded-full w-32 h-32 mx-auto mb-4" />
+                                    <p className="mb-2">"Fertitera changed our lives! Thanks to their amazing team, we now have the family we always dreamed of."</p>
+                                    <p className="font-bold">- John and Jane Doe</p>
                                 </div>
                             </Carousel.Item>
                             <Carousel.Item>
                                 <div className="p-6 shadow-md rounded-lg">
-                                    <span className="text-6xl text-center block mb-4">{icons.eggFreezing}</span>
-                                    <img src={testimonialImage2} alt="Testimonial 2" className="mx-auto mb-4 rounded-full" style={{ width: '100px', height: '100px', objectFit: 'cover' }} />
-                                    <blockquote className="text-xl italic mb-4">"The team at Fertitera goes above and beyond to ensure you feel cared for and supported throughout the entire process."</blockquote>
-                                    <p className="text-gray-700 font-bold">Emily Smith</p>
+                                    <img src={testimonialImage2} alt="Testimonial 2" className="rounded-full w-32 h-32 mx-auto mb-4" />
+                                    <p className="mb-2">"The care and support we received at Fertitera were exceptional. We couldn't have asked for a better experience."</p>
+                                    <p className="font-bold">- Mary and Mark Smith</p>
                                 </div>
                             </Carousel.Item>
                         </Carousel>
@@ -126,15 +145,20 @@ function Home() {
                 </section>
             </Element>
 
-            <section className="my-16 text-center" id="contact">
-                <h2 className="text-4xl font-bold mb-8 text-teal-600">Contact Us</h2>
-                <p className="text-gray-700 max-w-4xl mx-auto mb-8">Ready to take the next step? Contact us today to schedule your consultation.</p>
-                <Link to="/contact" className="bg-teal-500 text-white px-6 py-3 rounded-full inline-block">Contact Now</Link>
-            </section>
+            <Element name="contact">
+                <section className="my-16 text-center">
+                    <h2 className="text-4xl font-bold mb-8 text-teal-600">Contact Us</h2>
+                    <div className="max-w-4xl mx-auto text-gray-700">
+                        <p className="mb-4">Ready to start your journey to parenthood? Contact us today to schedule a consultation or to learn more about our services.</p>
+                        <Link to="/contact" className="mt-8 bg-teal-500 text-white px-6 py-3 rounded-full">Get in Touch</Link>
+                    </div>
+                </section>
+            </Element>
 
-            <footer className="bg-gray-200 text-gray-700 text-center py-4">
-                <p>&copy; {new Date().getFullYear()} Fertitera. All rights reserved.</p>
-            </footer>
+            {/* Infographics Section */}
+            <div>
+                <Infographics data={infographicData} />
+            </div>
         </div>
     );
 }
