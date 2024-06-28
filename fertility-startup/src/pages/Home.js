@@ -6,8 +6,7 @@ import { faBaby, faSnowflake, faDna, faClipboardList, faHospital, faSync } from 
 import backgroundImg from "../images/image2.jpeg";
 import testimonialImage1 from "../images/testi1.jpeg";
 import testimonialImage2 from "../images/testi.jpeg";
-import { Element } from 'react-scroll';
-import { animateScroll as scroll } from 'react-scroll';
+import { Element, animateScroll as scroll } from 'react-scroll';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Infographics from '../Infographics';
 
@@ -39,13 +38,22 @@ function Home() {
         treatment: <FontAwesomeIcon icon={faHospital} />,
         followUp: <FontAwesomeIcon icon={faSync} />,
     };
+
+    const scrollToServices = () => {
+        scroll.scrollTo('services', {
+            duration: 800,
+            smooth: 'easeInOutQuart',
+            offset: -50, // Adjust offset as needed to properly scroll to the section
+        });
+    };
+
     return (
         <div>
             <div className="bg-cover bg-center h-screen relative" style={{ backgroundImage: `url(${backgroundImg})`, width: '100%' }}>
                 <div className="bg-black bg-opacity-50 h-full flex flex-col justify-center items-center">
                     <h1 className="text-white text-4xl  text-center font-bold mb-4">Welcome to Fertitera</h1>
                     <p className="text-white text-lg max-w-xl text-center">Fertitera is dedicated to helping you achieve your dreams of starting a family with personalized and compassionate care.</p>
-                    <Link to="#services" className="mt-8 bg-teal-500 text-white px-6 py-3 rounded-full">Explore Our Services</Link>
+                    <button onClick={scrollToServices} className="mt-8 bg-teal-500 text-white px-6 py-3 rounded-full">Explore Our Services</button>
                 </div>
             </div>
 
@@ -127,7 +135,6 @@ function Home() {
                         <Carousel interval={4000}>
                             <Carousel.Item>
                                 <div className="p-6 shadow-md rounded-lg">
-
                                     <img src={testimonialImage1} alt="Testimonial 1" className="rounded-full w-32 h-32 mx-auto mb-4" />
                                     <p className="mb-2">"Fertitera changed our lives! Thanks to their amazing team, we now have the family we always dreamed of."</p>
                                     <p className="font-bold">- John and Jane Doe</p>
