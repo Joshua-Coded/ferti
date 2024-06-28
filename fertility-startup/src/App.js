@@ -14,7 +14,7 @@ function App() {
       <header className="bg-white shadow w-full">
         <nav className="container mx-auto flex justify-between items-center p-4">
           <Link to="/">
-            <img src={logo} alt="Fertility Care Logo" className="h-24" /> {/* Adjust the height as needed */}
+            <img src={logo} alt="Fertility Care Logo" className="h-24" />
           </Link>
           <div className="hidden md:flex space-x-6">
             <Link to="/" className="text-gray-700 hover:text-teal-600">Home</Link>

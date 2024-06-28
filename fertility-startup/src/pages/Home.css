@@ -1,25 +1,85 @@
-/* Home.css */
-
-/* Smooth scroll effect for anchor links */
+/* Global styles for smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Style for the active link in navigation */
-.active {
-    font-weight: bold;
-    color: #ff4500;
-    /* Adjust color as per your design */
+/* Sticky navigation bar */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    /* Adjust as needed */
+    z-index: 1000;
+    /* Ensure it's above other content */
 }
 
-/* Optional: Add transitions for smoother visual effects */
-.section {
-    transition: background-color 0.3s ease;
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Example: Changing background color on hover or active */
-.section:hover,
-.section.active {
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Parallax effect */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateZ(0);
+    /* Ensure smooth scrolling */
+}
+
+/* Hover and active states */
+.button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff4500;
+    color: #fff;
+}
+
+/* Smooth page transitions */
+.page {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.page.active {
+    opacity: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
     background-color: #f0f0f0;
-    /* Adjust as per your design */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/* Responsive grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Flexbox layout */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

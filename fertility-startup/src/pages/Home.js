@@ -58,7 +58,7 @@ function Home() {
             </div>
 
             <Element name="about">
-                <section className="my-16 text-center">
+                <section className="my-16 text-center section">
                     <h2 className="text-4xl font-bold mb-8 text-teal-600">What We Do</h2>
                     <div className="max-w-4xl mx-auto text-gray-700">
                         <p className="mb-4">At Fertitera, we provide state-of-the-art fertility treatments and services. Our experienced team is committed to offering personalized care and support throughout your fertility journey.</p>
@@ -68,7 +68,7 @@ function Home() {
             </Element>
 
             <Element name="services">
-                <section className="my-16">
+                <section className="my-16 section">
                     <h2 className="text-4xl font-bold mb-8 text-teal-600 text-center">Services</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         <div className="bg-white p-6 shadow-md rounded-lg">
@@ -91,7 +91,7 @@ function Home() {
             </Element>
 
             <Element name="benefits">
-                <section className="my-16 text-center">
+                <section className="my-16 text-center section">
                     <h2 className="text-4xl font-bold mb-8 text-teal-600">Benefits of Choosing Fertitera</h2>
                     <div className="max-w-4xl mx-auto text-gray-700">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -129,7 +129,7 @@ function Home() {
             </Element>
 
             <Element name="testimonials">
-                <section className="my-16 text-center">
+                <section className="my-16 text-center section">
                     <h2 className="text-4xl font-bold mb-8 text-teal-600">What Our Clients Say</h2>
                     <div className="max-w-4xl mx-auto text-gray-700">
                         <Carousel interval={4000}>
@@ -153,7 +153,7 @@ function Home() {
             </Element>
 
             <Element name="contact">
-                <section className="my-16 text-center">
+                <section className="my-16 text-center section">
                     <h2 className="text-4xl font-bold mb-8 text-teal-600">Contact Us</h2>
                     <div className="max-w-4xl mx-auto text-gray-700">
                         <p className="mb-4">Ready to start your journey to parenthood? Contact us today to schedule a consultation or to learn more about our services.</p>
